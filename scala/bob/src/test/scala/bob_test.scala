@@ -9,7 +9,6 @@ class BobSpecs extends FlatSpec with Matchers {
   }
 
   it should "respond to shouting" in {
-    pending
     val response = teenager.hey("WATCH OUT!")
     response should be ("Whoa, chill out!")
   }
