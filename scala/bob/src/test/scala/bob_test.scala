@@ -14,13 +14,11 @@ class BobSpecs extends FlatSpec with Matchers {
   }
 
   it should "respond to questions" in {
-    pending
     val response = teenager.hey("Does this cryogenic chamber make me look fat?")
     response should be ("Sure.")
   }
 
   it should "allow questions to end with numbers" in {
-    pending
     val response = teenager.hey("You are what, like 15?")
     response should be ("Sure.")
   }
