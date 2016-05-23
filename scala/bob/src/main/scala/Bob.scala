@@ -1,26 +1,15 @@
-import java.beans.Statement
+import scala.util.matching.Regex
 
 class Bob {
-  def hey(statement:String) : String = {
-    if (itIsOnlyUpperCase(statement) && containsLetter(statement)){
-      return "Whoa, chill out!"
-    } else if(isQuestion(statement)){
-      return "Sure."
-    } else if(statement.trim.isEmpty){
-      return "Fine. Be that way!"
+
+  val shouting:Regex = "([^a-z]*[A-Z]\\d*\\w*[!\\?]?)".r
+  val question:Regex = "(.*\\?)".r
+  val silence:Regex = "(\\s*)".r
+
+  def hey(statement:String) : String = statement match {
+      case shouting(_) => "Whoa, chill out!"
+      case question(_) => "Sure."
+      case silence(_) =>  "Fine. Be that way!"
+      case default => "Whatever."
     }
-    "Whatever."
-  }
-
-  def itIsOnlyUpperCase(statement:String): Boolean = {
-    statement.toUpperCase == statement
-  }
-
-  def containsLetter(statement: String): Boolean = {
-    statement.matches(".*[A-Z].*")
-  }
-
-  def isQuestion(statement:String): Boolean = {
-    statement.endsWith("?")
-  }
 }
