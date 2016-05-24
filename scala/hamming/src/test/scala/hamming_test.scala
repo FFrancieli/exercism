@@ -6,12 +6,10 @@ class HammingSpecs extends FlatSpec with Matchers {
   }
 
   it should "detect no difference between identical strands" in {
-    pending
     Hamming.compute("GGACTGA", "GGACTGA") should be (0)
   }
 
   it should "detect complete hamming distance in small strand" in {
-    pending
     Hamming.compute("ACT", "GGA") should be (3)
   }
 
