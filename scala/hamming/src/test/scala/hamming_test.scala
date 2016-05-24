@@ -14,22 +14,18 @@ class HammingSpecs extends FlatSpec with Matchers {
   }
 
   it should "give hamming distance in off by one strand" in {
-    pending
     Hamming.compute("GGACGGATTCTG", "AGGACGGATTCT") should be (9)
   }
 
   it should "give small hamming distance in middle somewhere" in {
-    pending
     Hamming.compute("GGACG", "GGTCG") should be (1)
   }
 
   it should "give a larger distance" in {
-    pending
     Hamming.compute("ACCAGGG", "ACTATGG") should be (2)
   }
 
   it should "be undefined for strands of unequal length" in {
-    pending
     an[IllegalArgumentException] should be thrownBy {
       Hamming.compute("AAACTAGGGG", "AGGCTAGCGGTAGGAC")
     }
