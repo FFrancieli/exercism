@@ -7,7 +7,6 @@ class WordCountSpecs extends FlatSpec with Matchers {
   }
 
   it should "count one of each" in {
-    pending
     val phrase = new Phrase("one of each")
     val counts = Map("one" -> 1, "of" -> 1, "each" -> 1)
     phrase.wordCount should be (counts)
