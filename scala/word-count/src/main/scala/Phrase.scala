@@ -9,7 +9,7 @@ class Phrase(phrase: String){
 	}
 
 	def listOfWordsInPhrase(): Array[String] ={
-		phrase.split(" ")
+		phrase.toLowerCase.split(" ")
 	}
 
 	def listDistinctWords(): Array[String] = {

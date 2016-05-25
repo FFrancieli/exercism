@@ -50,7 +50,6 @@ class WordCountSpecs extends FlatSpec with Matchers {
   }
 
   it should "normalize case" in {
-    pending
     val phrase = new Phrase("go Go GO")
     val counts = Map("go" -> 3)
     phrase.wordCount should be (counts)
