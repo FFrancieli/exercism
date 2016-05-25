@@ -4,8 +4,8 @@ class Phrase(phrase: String){
 		listDistinctWords() map (word => word -> count(word)) toMap
 	}
 
-	def count(word: String): Int = {
-		listOfWordsInPhrase().count(_ == word)
+	def count(string: String): Int = {
+		listOfWordsInPhrase().count(_ == string)
 	}
 
 	def listOfWordsInPhrase(): Array[String] ={
