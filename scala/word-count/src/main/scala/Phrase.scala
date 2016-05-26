@@ -1,6 +1,8 @@
 class Phrase(phrase: String){
 
+
 	def wordCount: scala.collection.immutable.Map[String,Int] = {
+
 		listDistinctWords() map (word => word -> count(word)) toMap
 	}
 
@@ -9,7 +11,11 @@ class Phrase(phrase: String){
 	}
 
 	def listOfWordsInPhrase(): Array[String] ={
-		phrase.toLowerCase.split(" ")
+		phraseWithoutPunctuation.toLowerCase.split(" ")
+	}
+
+	def phraseWithoutPunctuation: String = {
+		phrase.replaceAll("[^a-zA-Z ]", "").replace("  ", " ")
 	}
 
 	def listDistinctWords(): Array[String] = {

@@ -28,7 +28,6 @@ class WordCountSpecs extends FlatSpec with Matchers {
   }
 
   it should "ignore punctuation" in {
-    pending
     val phrase = new Phrase("car : carpet as java : javascript!!&@$%^&")
     val counts = Map(
       "car" -> 1, "carpet" -> 1, "as" -> 1, "java" -> 1, "javascript" -> 1
