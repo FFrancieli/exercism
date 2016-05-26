@@ -54,7 +54,6 @@ class WordCountSpecs extends FlatSpec with Matchers {
   }
 
   it should "allow apostrophes" in {
-    pending
     val phrase = new Phrase("First: don't laugh. Then: don't cry.")
     val counts =
       Map("first" -> 1, "don't" -> 2, "laugh" -> 1, "then" -> 1, "cry" -> 1)

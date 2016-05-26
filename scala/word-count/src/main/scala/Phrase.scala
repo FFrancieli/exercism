@@ -15,7 +15,7 @@ class Phrase(phrase: String){
 	}
 
 	def phraseWithoutPunctuation: String = {
-		phrase.replaceAll("[^a-zA-Z, ]", "").replace("  ", " ")
+		phrase.replaceAll("[^a-zA-Z,' ]", "").replace("  ", " ")
 	}
 
 	def listDistinctWords(): Array[String] = {
