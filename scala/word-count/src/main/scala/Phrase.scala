@@ -10,10 +10,10 @@ class Phrase(phrase: String){
 	}
 
 	def listOfWordsInPhrase(): Array[String] ={
-		phraseWithoutPunctuation.toLowerCase.split(",| ")
+		cleanPhrase.toLowerCase.split(",| ")
 	}
 
-	def phraseWithoutPunctuation: String = {
+	def cleanPhrase: String = {
 		phrase.replaceAll("[^a-zA-Z0-9,' ]", "").replace("  ", " ").replaceAll("\\s*,\\s*", ",")
 	}
 
