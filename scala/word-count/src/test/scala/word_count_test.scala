@@ -36,7 +36,6 @@ class WordCountSpecs extends FlatSpec with Matchers {
   }
 
   it should "handle cramped lists" in {
-    pending
     val phrase = new Phrase("one,two,three")
     phrase.wordCount should be (Map("one" -> 1, "two" -> 1, "three" -> 1))
   }
