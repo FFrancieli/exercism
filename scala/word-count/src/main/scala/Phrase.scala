@@ -10,12 +10,11 @@ class Phrase(phrase: String){
 	}
 
 	def listOfWordsInPhrase(): Array[String] ={
-		val splitter = if (phrase.contains(",")) "," else " "
-		phraseWithoutPunctuation.toLowerCase.split(splitter)
+		phraseWithoutPunctuation.toLowerCase.split(",| ")
 	}
 
 	def phraseWithoutPunctuation: String = {
-		phrase.replaceAll("[^a-zA-Z,' ]", "").replace("  ", " ")
+		phrase.replaceAll("[^a-zA-Z0-9,' ]", "").replace("  ", " ").replaceAll("\\s*,\\s*", ",")
 	}
 
 	def listDistinctWords(): Array[String] = {

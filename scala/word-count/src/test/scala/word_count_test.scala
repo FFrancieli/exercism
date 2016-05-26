@@ -41,7 +41,6 @@ class WordCountSpecs extends FlatSpec with Matchers {
   }
 
   it should "include numbers" in {
-    pending
     val phrase = new Phrase("testing, 1, 2 testing")
     val counts = Map("testing" -> 2, "1" -> 1, "2" -> 1)
     phrase.wordCount should be (counts)
