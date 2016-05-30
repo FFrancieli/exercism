@@ -10,11 +10,7 @@ class Phrase(phrase: String){
 	}
 
 	def listOfWordsInPhrase(): Array[String] ={
-		cleanPhrase.toLowerCase.split(",| ")
-	}
-
-	def cleanPhrase: String = {
-		phrase.replaceAll("[^a-zA-Z0-9,' ]", "").replace("  ", " ").replaceAll("\\s*,\\s*", ",")
+		phrase.toLowerCase().split("[^\\w']").filterNot(_.isEmpty)
 	}
 
 	def listDistinctWords(): Array[String] = {
