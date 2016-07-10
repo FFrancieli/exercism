@@ -20,19 +20,16 @@ class NucleotideCountSpecs extends FlatSpec with Matchers {
   }
 
   "a mixed dna string" should "count only thymine" in {
-    pending
     new DNA("GGGGGTAACCCGG").nucleotideCounts('T') should be (1)
   }
 
   it should "count a nucleotide only once" in {
-    pending
     val dna = new DNA("CGATTGGG")
     dna.nucleotideCounts('T')
     dna.nucleotideCounts('T') should be (2)
   }
 
   it should "not change counts after counting adenine" in {
-    pending
     val dna = new DNA("GATTACA")
     dna.nucleotideCounts('A')
     val expected = Map('A' -> 3, 'T' -> 2, 'C' -> 1, 'G' -> 1)
@@ -40,7 +37,6 @@ class NucleotideCountSpecs extends FlatSpec with Matchers {
   }
 
   it should "validate nucleotides" in {
-    pending
     a [RuntimeException] should be thrownBy new DNA("GACT").nucleotideCounts('X')
   }
 
