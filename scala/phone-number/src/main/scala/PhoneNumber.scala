@@ -1,8 +1,8 @@
 class PhoneNumber(phoneNumber: String) {
 
-  val number: String = getPhoneNumber
+  val number: String = formatPhoneNumber
 
-  def getPhoneNumber = phoneNumber.filter(_.isDigit) match {
+  def formatPhoneNumber = phoneNumber.filter(_.isDigit) match {
     case num if num.length == 10 => num
     case num if isValidNumber(num) => num.tail
     case _ => "0000000000"
