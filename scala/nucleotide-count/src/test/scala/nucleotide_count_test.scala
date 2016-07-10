@@ -6,7 +6,6 @@ class NucleotideCountSpecs extends FlatSpec with Matchers {
   }
 
   it should "have no nucleotides" in {
-    pending
     val expected = Map('A' -> 0, 'T' -> 0, 'C' -> 0, 'G' -> 0)
     new DNA("").nucleotideCounts should be (expected)
   }
