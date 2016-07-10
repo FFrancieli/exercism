@@ -41,12 +41,10 @@ class NucleotideCountSpecs extends FlatSpec with Matchers {
   }
 
   it should "validate dna not rna" in {
-    pending
     a [RuntimeException] should be thrownBy new DNA("ACGU")
   }
 
   it should "validate dna" in {
-    pending
     a [RuntimeException] should be thrownBy new DNA("John")
   }
 
