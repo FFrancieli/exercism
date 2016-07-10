@@ -1,6 +1,7 @@
 class PhoneNumber(phoneNumber: String) {
 
-  val number: String = formatPhoneNumber
+  val number:String = formatPhoneNumber
+  val areaCode:String = number take 3
 
   def formatPhoneNumber = phoneNumber.filter(_.isDigit) match {
     case num if num.length == 10 => num
