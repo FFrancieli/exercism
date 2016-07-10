@@ -11,12 +11,10 @@ class NucleotideCountSpecs extends FlatSpec with Matchers {
   }
 
   "a repetitive sequence" should "count cytosine" in {
-    pending
     new DNA("CCCCC").nucleotideCounts('C') should be (5)
   }
 
   it should "have only guanine" in {
-    pending
     val expected = Map('A' -> 0, 'T' -> 0, 'C' -> 0, 'G' -> 8)
     new DNA("GGGGGGGG").nucleotideCounts should be (expected)
   }
