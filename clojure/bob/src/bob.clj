@@ -9,8 +9,13 @@
   (= (.trim statment) "")
 )
 
+(defn- is-question? [statment]
+  (.endsWith statment "?")
+)
+
 (defn response-for [statment]
   (cond
     (is-shouting? statment) "Whoa, chill out!"
     (is-silence? statment) "Fine. Be that way!"
+    (is-question? statment) "Sure."
     :else "Whatever."))
