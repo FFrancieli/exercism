@@ -1,17 +1,15 @@
-(ns bob)
+(ns bob
+  (:require [clojure.string :as string]))
 
 (defn- is-shouting? [statment]
-  (and (= (.toUpperCase statment) statment)
-  (re-find #"[A-Z]+" statment))
-)
+  (and (= (string/upper-case statment) statment)
+  (re-find #"[A-Z]+" statment)))
 
 (defn- is-silence?  [statment]
-  (= (.trim statment) "")
-)
+  (= (string/trim statment) ""))
 
 (defn- is-question? [statment]
-  (.endsWith statment "?")
-)
+  (string/ends-with? statment "?"))
 
 (defn response-for [statment]
   (cond
