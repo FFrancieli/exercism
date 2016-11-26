@@ -7,5 +7,14 @@
   \A \U
 })
 
+(defn- is-valid? [nucleotide]
+  (contains? dna-to-rna nucleotide))
+
 (defn to-rna [dna-strand]
-  (apply str (map #(get dna-to-rna %) dna-strand)))
+  (apply str (map
+    (fn [nucleotide]
+      (assert (is-valid? nucleotide))
+      (get dna-to-rna nucleotide)
+    )
+  dna-strand)
+))

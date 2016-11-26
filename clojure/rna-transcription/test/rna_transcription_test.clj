@@ -14,6 +14,9 @@
 (deftest it-transcribes-thymine-to-adenine
   (is (= "A" (rna-transcription/to-rna "T"))))
 
+  (deftest it-throws-assertion-error-exception-for-invalid-nucleotide
+    (is (thrown? AssertionError (rna-transcription/to-rna "Z"))))
+
 (deftest it-transcribes-all-nucleotides
   (is (= "UGCACCAGAAUU" (rna-transcription/to-rna "ACGTGGTCTTAA"))))
 
