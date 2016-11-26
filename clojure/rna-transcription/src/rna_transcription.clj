@@ -1,5 +1,12 @@
 (ns rna-transcription)
 
-(defn to-rna [] ;; <- arglist goes here
-  ;; your code goes here
+(def dna-to-rna {
+  "G" "C"
+  "C" "G"
+  "T" "A"
+  "A" "U"
+})
+
+(defn to-rna [dna-strand]
+  (get dna-to-rna dna-strand)
 )
