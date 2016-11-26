@@ -10,11 +10,13 @@
 (defn- is-valid? [nucleotide]
   (contains? dna-to-rna nucleotide))
 
-(defn to-rna [dna-strand]
-  (apply str (map
+(defn- convert-dna-to-rna [dna-strand]
+  (map
     (fn [nucleotide]
       (assert (is-valid? nucleotide))
       (get dna-to-rna nucleotide)
-    )
-  dna-strand)
-))
+    ) dna-strand)
+)
+
+(defn to-rna [dna-strand]
+  (apply str (convert-dna-to-rna dna-strand)))
