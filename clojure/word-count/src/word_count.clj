@@ -2,7 +2,7 @@
   (:require [clojure.string :as string]))
 
 (defn- list-of-words [phrase]
-  (string/split phrase #" ")
+  (filter #(not (empty? %)) (string/split phrase #"\W"))
 )
 
 (defn word-count [phrase]
