@@ -6,5 +6,5 @@
 )
 
 (defn word-count [phrase]
-  (frequencies (list-of-words phrase))
+  (frequencies (list-of-words (string/lower-case phrase)))
 )
