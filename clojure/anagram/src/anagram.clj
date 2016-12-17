@@ -8,4 +8,5 @@
 
 (defn anagrams-for [word word-list]
   (filter (fn [possible-anagram]
-            (is-anagram? word possible-anagram)) word-list))
+            (is-anagram? (string/lower-case word) (string/lower-case possible-anagram)))
+          word-list))
