@@ -13,7 +13,7 @@
 	(= 11 (count phone-number)))
 
 (defn- starts-with-one? [phone-number]
-	(= '(\1) (take 1 phone-number)))
+	(= '\1 (first phone-number)))
 
 (defn- valid-eleven-digits? [phone-number]
 	(and (eleven-digits-number? phone-number) (starts-with-one? phone-number)))
