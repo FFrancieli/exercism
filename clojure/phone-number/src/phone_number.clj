@@ -36,4 +36,4 @@
 
 (defn pretty-print [phone-number]
 	(let [phone-number (number phone-number)]
-		(format "(%s) %s-%s" (area-code phone-number) (subs phone-number 3 6) (subs phone-number 6 10))))
+		(format "(%s) %s-%s" (area-code phone-number) (subs phone-number 3 6) (subs phone-number 6))))
