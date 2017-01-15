@@ -3,8 +3,8 @@
 
 (def invalid-phone-number "0000000000")
 
-(defn- tail [string]
-	(subs string 1))
+(defn- remove-first-digit [phone-number]
+	(subs phone-number 1))
 
 (defn- eleven-digits-number? [phone-number]
 	(= 11 (count phone-number)))
@@ -22,9 +22,10 @@
 
 (defn number [phone-number] 
 	(let [clean-phone-number (clear phone-number)]
+		
 		(cond
 			(= 10 (count clean-phone-number)) clean-phone-number
-			(valid-eleven-digits? clean-phone-number) (tail clean-phone-number)
+			(valid-eleven-digits? clean-phone-number) (remove-first-digit clean-phone-number)
 			:else invalid-phone-number)))
 
 (defn area-code[phone-number]
