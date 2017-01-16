@@ -18,10 +18,8 @@
 (defn- valid-eleven-digits? [phone-number]
 	(and (eleven-digits-number? phone-number) (starts-with-one? phone-number)))
 
-(def undesired-characters #"[ ()-.]")
-
 (defn- clear [phone-number] 
-	 (string/replace phone-number undesired-characters ""))
+	 (string/replace phone-number #"\D" ""))
 
 (defn number [phone-number] 
 	(let [clean-phone-number (clear phone-number)]
