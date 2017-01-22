@@ -6,4 +6,5 @@
 (defn grade [database grade]
 	(database grade []))
 
-(defn sorted [database])
+(defn sorted [database]
+	(into {} (map (fn [[grade students]] [grade (sort students)]) (sort-by key database))))
