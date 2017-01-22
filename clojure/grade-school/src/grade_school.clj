@@ -1,7 +1,7 @@
 (ns grade-school)
 
 (defn add [database student-name grade]
-	(assoc database grade ( vector student-name))
+	(update-in database [grade] (comp vec conj) student-name)
 	)
 
 (defn grade [database grade])
