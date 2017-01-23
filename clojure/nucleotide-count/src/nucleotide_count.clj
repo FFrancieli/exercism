@@ -2,8 +2,15 @@
 
 (def ^:private nucleotides (list \A \C \G \T))
 
-(defn nucleotide-counts [dna-sequence]
-	(merge (zipmap nucleotides (repeat 0)) (frequencies dna-sequence)))
+(def ^:private empty-nucleotide-counter (zipmap nucleotides (repeat 0)))
 
-(defn count [necleotide dna-sequence] 
-	(get (nucleotide-counts dna-sequence) necleotide))
+(defn nucleotide-counts [dna-sequence]
+	(merge empty-nucleotide-counter (frequencies dna-sequence)))
+
+(defn- valid-nucleotide? [nucleotide] ( = nucleotide (some #{nucleotide} nucleotides)))
+
+(defn count [necleotide dna-sequence]
+	(cond
+		(valid-nucleotide? necleotide) (get (nucleotide-counts dna-sequence) necleotide)
+		:else (throw (Exception. "Invalid nucleotide")))
+	) 
